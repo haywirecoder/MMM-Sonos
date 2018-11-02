@@ -15,7 +15,7 @@ When starting the Mirror:
 
 Module on the Left side of the Mirror:
 
-![Sonos Module Left](https://github.com/Snille/MMM-Sonos/blob/master/.github/Sonos.png)
+![Sonos Module Left](https://github.com/Snille/MMM-Sonos/blob/master/.github/sonos.png)
 
 
 ## Usage
