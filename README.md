@@ -75,43 +75,7 @@ Here are the configuration options to configure the module.
 |`apiEndpoint`|Link to the "zones" information on the SONOS API.<br><br>**Default value:** `zones`|
 |`exclude`|Zones names to exclude ["Secret-Room","Greenhouse"].<br><br>**Default value:** `[]`|
 
-### Custom-CSS
 
-Here is my CSS settings for the module that I have added to my custom.css to give it the exta special look. :)
-
-```
-/* Sonos --------------------------------------------*/
-.sonos ul .type {
-    font-size: 12px;
-	padding: 0px 0px;
-	line-height: 12px;
-	width: 260px;
-}
-.sonos ul .room {
-    font-size: 16px;
-	padding: 0px 0px;
-	line-height: 16px;
-	width: 260px;
-}
-.sonos ul .song {
-	padding: 0px 0px;
-	position: relative;
-}
-.sonos ul .art img {
-    height: 60px;
-    width: 60px;
-	border-radius: 50%;
-	margin: 0px 0px;
-	border: 2px solid #FFF;
-}
-.sonos ul .name {
-    width: 200px;
-    font-size: 16px;
-	padding: 0px 4px;
-	line-height: 16px;
-}
-/*****************************************************/
-```
 
 ### Known Issues
 
