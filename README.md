@@ -15,23 +15,7 @@ When starting the Mirror:
 
 Module on the Left side of the Mirror:
 
-![Sonos Module Left](https://github.com/Snille/MMM-Sonos/blob/master/.github/Sonos-Left.png)
-
-Module in the Center of the Mirror:
-
-![Sonos Module Center](https://github.com/Snille/MMM-Sonos/blob/master/.github/Sonos-Center.png)
-
-Module in the Center of the Mirror playing in 3 different zones:
-
-![Sonos Module Center](https://github.com/Snille/MMM-Sonos/blob/master/.github/Sonos-Multizone.png)
-
-Module on the Right side of the Mirror:
-
-![Sonos Module Right](https://github.com/Snille/MMM-Sonos/blob/master/.github/Sonos-Right.png)
-
-This is my own mirrors view (Top Center) using some addition in the custom.css [see below](#custom-css)
-
-![Sonos Module Custom CSS](https://github.com/Snille/MMM-Sonos/blob/master/.github/Sonos-Custom-CSS.png)
+![Sonos Module Left](https://github.com/Snille/MMM-Sonos/blob/master/.github/Sonos.png)
 
 
 ## Usage
@@ -52,7 +36,7 @@ cd ~/MagicMirror/modules
 Clone this repository:
 
 ```
-git clone https://github.com/Snille/MMM-Sonos.git
+git clone https://github.com/haywirecoder/MMM-Sonos.git
 ```
 
 Add some [config entries](#configuration) to your config.js file. After that the content will be added to your mirror.
