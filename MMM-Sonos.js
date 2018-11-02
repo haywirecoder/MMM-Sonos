@@ -11,7 +11,7 @@
 		showAlbumArt: true,
 		preRoomText: 'Zone: ',
 		preArtistText: 'Artist: ',
-		preTrackText: 'Track: ',
+		preTrackText: 'Title: ',
 		preTypeText: 'Source: ',
 		showRoomName: true,
 		animationSpeed: 1000,
@@ -55,6 +55,7 @@
 				var artist = item.coordinator.state.currentTrack.artist;
 				var track = item.coordinator.state.currentTrack.title;
 				var cover = item.coordinator.state.currentTrack.absoluteAlbumArtUri;
+				var duration = (item.coordinator.state.elapsedTime/item.coordinator.state.currentTrack.duration) * 100;
 //				var streamInfo = item.coordinator.state.currentTrack.streamInfo;
 				var type = item.coordinator.state.currentTrack.type;
 				var preroom = this.config.preRoomText;
@@ -62,7 +63,10 @@
 				var pretrack = this.config.preTrackText;
 				var pretype = this.config.preTypeText;
 				var prestream = this.config.preStreamText;
-				text += this.renderRoom(state, pretype, type, preroom, room, preartist, artist, pretrack, track, cover);
+				if (duration > 100) {
+					duration = 100;
+				  }
+				text += this.renderRoom(state, pretype, type, preroom, room, preartist, artist, pretrack, track, cover, duration);
 			}
 		}.bind(this));
 		this.loaded = true;
@@ -77,7 +81,7 @@
 			this.hide(this.config.animationSpeed);
 		}
 	},
-	renderRoom: function(state, pretype, type, preroom, roomName, preartist, artist, pretrack, track, cover) {
+	renderRoom: function(state, pretype, type, preroom, roomName, preartist, artist, pretrack, track, cover,duration) {
 		artist = artist?artist:"";
 		track = track?track:"";
 		cover = cover?cover:"";
@@ -92,15 +96,20 @@
 			&& (cover && cover.trim().length) == 0;
 		// show song if PLAYING
 		if(state === 'PLAYING' && !isEmpty) {
-			room += this.html.type.format(pretype, type.charAt(0).toUpperCase() + type.slice(1));
+			//room += this.html.type.format(pretype, type.charAt(0).toUpperCase() + type.slice(1));
+			room += this.html.title.format(pretrack,track);
 			room += this.html.song.format(
-				this.html.name.format(preartist, artist, pretrack, track)+
+				//this.html.name.format(preartist, artist, pretrack, track)+
+				this.html.name.format(preartist, artist)+
 				// show album art if 'showAlbumArt' is set
 				(this.config.showAlbumArt
 					?this.html.art.format(cover)
 					:''
 				)
 			);
+			// inverse progress bar
+			duration = 100 - duration;
+			room += this.html.progress.format(duration);
 		}
 		return this.html.roomWrapper.format(room);
 	},
@@ -109,9 +118,11 @@
 		roomWrapper: '{0}',
 		room: '<div class="room xsmall">{0}{1}</div>',
 		song: '<div class="song">{0}</div>',
-		type: '<div class="type normal small">{0}{1}</div>',
-		name: '<div class="name normal small"><div>{0}{1}</div><div>{2}{3}</div></div>',
+		//type: '<div class="type normal small">{0}{1}</div>',
+		title: '<div class="title bright normal small">{0}{1}</div>',
+		name: '<div class="name normal small"><div><b>{0}</b>{1}</div></div>',
 		art: '<div class="art"><img src="{0}"/></div>',
+		progress: '<div class="song-progress-bar"><div class="inner-bar" style="width: {0}%"></div></div>',
 	},
 	capitalize: function() {
 		return this.charAt(0).toUpperCase() + this.slice(1);

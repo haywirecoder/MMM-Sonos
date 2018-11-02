@@ -3,26 +3,49 @@
   padding: 0;
   margin: 0;
 }
-.sonos ul .name,
-.sonos ul .art {
-  display: inline-block;
-  vertical-align: middle;
-}
-.sonos ul .name {
-  padding: 0px .25em;
-}
-.sonos ul .art img {
-  height: 100px;
-}
-.sonos ul .type,
-.sonos ul .room {
-  font-size: 50%;
-  padding: .25em .5em;
-}
+
 .sonos ul .song {
 	padding: 0px 0px;
 	position: relative;
 }
 .sonos ul.flip {
   direction: rtl;
+}
+
+.sonos ul .room {
+  font-size: 60%;
+  padding: .25em .1em;
+  
+}
+.sonos ul .title,
+.sonos ul .type{
+  font-size: 60%;
+  padding: .25em .8em;
+}
+
+.sonos ul .name,
+.sonos ul .art {
+  display: inline-block;
+  vertical-align: middle;
+  width: 150px;
+  font-size: 50%;
+  line-height: 16px;
+}
+
+.sonos ul .art img {
+  height: 110px;
+  padding: .25em .8em;
+ 
+}
+
+.sonos ul .song-progress-bar {
+  width: 315px;
+  height: 3px;
+  background:	#FFFFFF;
+  margin: 10px 0;
+}
+.sonos ul .song-progress-bar .inner-bar {
+  height: 3px;
+  background: #708090;
+  width: 25%;
 }
