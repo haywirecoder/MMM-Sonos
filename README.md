@@ -11,11 +11,11 @@ Note from Snille: I'm new to the MagicMirror world and Node.js, this is my first
 
 When starting the Mirror:
 
-![Sonos Module Loading](https://github.com/Snille/MMM-Sonos/blob/master/.github/Sonos-Loading.png)
+![Sonos Module Loading](https://github.com/haywirecoder/MMM-Sonos/blob/master/.github/Sonos-Loading.png)
 
 Module on the Left side of the Mirror:
 
-![Sonos Module Left](https://github.com/Snille/MMM-Sonos/blob/master/.github/sonos.png)
+![Sonos Module Left](https://github.com/haywirecoder/MMM-Sonos/blob/master/.github/sonos.png)
 
 
 ## Usage
